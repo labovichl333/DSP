@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TabPane prefHeight="706.0" prefWidth="925.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="2.а">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="chart2a" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="600.0" title="A=8, f=4">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="btnTask2aBuild" layoutX="700.0" layoutY="550.0" mnemonicParsing="false" onAction="#task2aStart" text="Построить" />
+                        <RadioButton layoutX="700.0" layoutY="160.0" mnemonicParsing="false" text="π/6">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="phase1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <Label layoutX="700.0" layoutY="128.0" text="Фаза">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="700.0" layoutY="180.0" mnemonicParsing="false" text="π/3" toggleGroup="$phase1" />
+                        <RadioButton layoutX="700.0" layoutY="200.0" mnemonicParsing="false" text="2π/3" toggleGroup="$phase1" />
+                        <RadioButton layoutX="700.0" layoutY="220.0" mnemonicParsing="false" text="π/4" toggleGroup="$phase1" />
+                        <RadioButton layoutX="700.0" layoutY="240.0" mnemonicParsing="false" text="0" toggleGroup="$phase1" />
+
+                         <Label layoutX="703.0" layoutY="290.0" text="N">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="320.0" mnemonicParsing="false" text="512">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="n1" />
+                           </toggleGroup></RadioButton>
+                         <RadioButton layoutX="700.0" layoutY="340.0" mnemonicParsing="false" text="1024" toggleGroup="$n1" />
+                         <RadioButton layoutX="700.0" layoutY="360.0" mnemonicParsing="false" text="2048" toggleGroup="$n1" />
+                         <RadioButton layoutX="700.0" layoutY="380.0" mnemonicParsing="false" text="4096" toggleGroup="$n1" />
+                        <Button layoutX="696.0" layoutY="596.0" mnemonicParsing="false" onAction="#clear" prefHeight="37.0" prefWidth="118.0" text="Отчистить" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="2.б">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="chart2b" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="600.0" title="A=4, phi=0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="btnTask2bBuild" layoutX="700.0" layoutY="550.0" mnemonicParsing="false" onAction="#task2bStart" text="Построить" />
+                         <RadioButton layoutX="700.0" layoutY="160.0" mnemonicParsing="false" text="8">
+                             <toggleGroup>
+                                 <ToggleGroup fx:id="frequency1" />
+                             </toggleGroup>
+                         </RadioButton>
+                         <Label layoutX="700.0" layoutY="128.0" text="Частота">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="180.0" mnemonicParsing="false" text="1" toggleGroup="$frequency1" />
+                         <RadioButton layoutX="700.0" layoutY="200.0" mnemonicParsing="false" text="5" toggleGroup="$frequency1" />
+                         <RadioButton layoutX="700.0" layoutY="220.0" mnemonicParsing="false" text="4" toggleGroup="$frequency1" />
+                         <RadioButton layoutX="700.0" layoutY="240.0" mnemonicParsing="false" text="9" toggleGroup="$frequency1" />
+
+                         <Label layoutX="703.0" layoutY="290.0" text="N">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="320.0" mnemonicParsing="false" text="512" toggleGroup="$n2">
+                             <toggleGroup>
+                                 <ToggleGroup fx:id="n2" />
+                             </toggleGroup>
+                         </RadioButton>
+                         <RadioButton layoutX="700.0" layoutY="340.0" mnemonicParsing="false" text="1024" toggleGroup="$n2" />
+                         <RadioButton layoutX="700.0" layoutY="360.0" mnemonicParsing="false" text="2048" toggleGroup="$n2" />
+                         <RadioButton layoutX="700.0" layoutY="380.0" mnemonicParsing="false" text="4096" toggleGroup="$n2" />
+                        <Button layoutX="703.0" layoutY="600.0" mnemonicParsing="false" onAction="#clear" text="Отчистить" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="2.в">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="chart2c" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="600.0" title="f=2, phi=0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="btnTask2cBuild" layoutX="700.0" layoutY="550.0" mnemonicParsing="false" onAction="#task2cStart" text="Построить" />
+                         <RadioButton layoutX="700.0" layoutY="160.0" mnemonicParsing="false" text="8">
+                             <toggleGroup>
+                                 <ToggleGroup fx:id="amplitude1" />
+                             </toggleGroup>
+                         </RadioButton>
+                         <Label layoutX="700.0" layoutY="128.0" text="Амплитуда">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="180.0" mnemonicParsing="false" text="3" toggleGroup="$amplitude1" />
+                         <RadioButton layoutX="700.0" layoutY="200.0" mnemonicParsing="false" text="2" toggleGroup="$amplitude1" />
+                         <RadioButton layoutX="700.0" layoutY="220.0" mnemonicParsing="false" text="1" toggleGroup="$amplitude1" />
+                         <RadioButton layoutX="700.0" layoutY="245.0" mnemonicParsing="false" text="4" toggleGroup="$amplitude1" />
+                         <Label layoutX="703.0" layoutY="290.0" text="N">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="320.0" mnemonicParsing="false" text="512" toggleGroup="$n3">
+                             <toggleGroup>
+                                <ToggleGroup fx:id="n3" />
+                             </toggleGroup>
+                         </RadioButton>
+                         <RadioButton layoutX="700.0" layoutY="340.0" mnemonicParsing="false" text="1024" toggleGroup="$n3" />
+                         <RadioButton layoutX="700.0" layoutY="360.0" mnemonicParsing="false" text="2048" toggleGroup="$n3" />
+                         <RadioButton layoutX="700.0" layoutY="380.0" mnemonicParsing="false" text="4096" toggleGroup="$n3" />
+                        <Button layoutX="701.0" layoutY="599.0" mnemonicParsing="false" onAction="#clear" text="Отчистить" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="3">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="chart3" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="600.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="btnTask3Build" layoutX="700.0" layoutY="550.0" mnemonicParsing="false" onAction="#task3Start" text="Построить" />
+
+                         <Label layoutX="703.0" layoutY="180.0" text="N">
+                             <font>
+                                 <Font size="21.0" />
+                             </font>
+                         </Label>
+                         <RadioButton layoutX="700.0" layoutY="210.0" mnemonicParsing="false" text="512" toggleGroup="$n4">
+                             <toggleGroup>
+                                 <ToggleGroup fx:id="n4" />
+                             </toggleGroup>
+                         </RadioButton>
+                         <RadioButton layoutX="700.0" layoutY="230.0" mnemonicParsing="false" text="1024" toggleGroup="$n4" />
+                         <RadioButton layoutX="700.0" layoutY="250.0" mnemonicParsing="false" text="2048" toggleGroup="$n4" />
+                         <RadioButton layoutX="700.0" layoutY="270.0" mnemonicParsing="false" text="4096" toggleGroup="$n4" />
+                        <Button layoutX="698.0" layoutY="600.0" mnemonicParsing="false" onAction="#clear" text="Отчистить" />
+                        <Slider fx:id="slider1" layoutX="701.0" layoutY="316.0" max="6.28" value="0.785" />
+                        <Slider fx:id="slider2" layoutX="701.0" layoutY="354.0" max="6.28" value="2.355" />
+                        <Slider fx:id="slider3" layoutX="701.0" layoutY="393.0" max="6.28" value="2.093" />
+                        <Slider fx:id="slider4" layoutX="701.0" layoutY="423.0" max="6.28" value="1.75" />
+                        <Slider fx:id="slider5" layoutX="701.0" layoutY="459.0" max="6.28" value="1.046" />
+                        <Label layoutX="677.0" layoutY="314.0" text="phi1" />
+                        <Label layoutX="677.0" layoutY="352.0" text="phi2" />
+                        <Label layoutX="677.0" layoutY="391.0" text="phi3" />
+                        <Label layoutX="677.0" layoutY="421.0" text="phi4" />
+                        <Label layoutX="677.0" layoutY="457.0" text="phi5" />
+                        <Label fx:id="label1" layoutX="841.0" layoutY="314.0" text="0.785" />
+                        <Label fx:id="label2" layoutX="841.0" layoutY="352.0" text="2.355" />
+                        <Label fx:id="label3" layoutX="841.0" layoutY="391.0" text="2.093" />
+                        <Label fx:id="label4" layoutX="841.0" layoutY="421.0" text="1.75" />
+                        <Label fx:id="label5" layoutX="841.0" layoutY="457.0" text="1.046" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="4">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                          <LineChart fx:id="chart4" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="600.0">
+                              <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                              </xAxis>
+                              <yAxis>
+                                  <NumberAxis side="LEFT" />
+                              </yAxis>
+                          </LineChart>
+                          <Button fx:id="btnTask4Build" layoutX="700.0" layoutY="550.0" mnemonicParsing="false" onAction="#task4Start" text="Построить" />
+
+                          <Label layoutX="703.0" layoutY="180.0" text="N">
+                              <font>
+                                  <Font size="21.0" />
+                              </font>
+                          </Label>
+                          <RadioButton layoutX="700.0" layoutY="210.0" mnemonicParsing="false" text="512" toggleGroup="$n5">
+                              <toggleGroup>
+                                  <ToggleGroup fx:id="n5" />
+                              </toggleGroup>
+                          </RadioButton>
+                          <RadioButton layoutX="700.0" layoutY="230.0" mnemonicParsing="false" text="1024" toggleGroup="$n5" />
+                          <RadioButton layoutX="700.0" layoutY="250.0" mnemonicParsing="false" text="2048" toggleGroup="$n5" />
+                          <RadioButton layoutX="700.0" layoutY="270.0" mnemonicParsing="false" text="4096" toggleGroup="$n5" />
+                        <Button layoutX="698.0" layoutY="598.0" mnemonicParsing="false" onAction="#clear" text="Отчистить" />
+                      </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>

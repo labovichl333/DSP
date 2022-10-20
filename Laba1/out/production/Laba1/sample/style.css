@@ -1,0 +1,18 @@
+.tab {
+    -fx-pref-width: 200;
+}
+.tab-header-background {
+    -fx-background-color:transparent;
+}
+.chart-line-symbol {
+    -fx-background-insets: 0,0;
+    -fx-background-radius: 0px;
+    -fx-padding: 0px;
+    -fx-shape: "";
+    -fx-background-color: transparent;
+}
+
+.default-color0.chart-series-line { -fx-stroke: #e91613; }
+.default-color1.chart-series-line { -fx-stroke: #2a2ff0; }
+.default-color2.chart-series-line { -fx-stroke: #2fdd27; }
+
